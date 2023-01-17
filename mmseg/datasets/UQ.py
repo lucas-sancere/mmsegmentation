@@ -1,5 +1,11 @@
+import os.path as osp
+
+import mmcv
 from .builder import DATASETS
 from .custom import CustomDataset
+
+import PIL
+PIL.Image.MAX_IMAGE_PIXELS = 10000000000000
 
 # Register UQ class into DATASETS
 @DATASETS.register_module()
@@ -10,7 +16,7 @@ class UQDataset(CustomDataset):
     # Class names of your dataset annotations, i.e., actual names of corresponding label 0, 1, 2 in annotation segmentation maps
     CLASSES = ('background', 'tissue')
     # BGR value of corresponding classes, which are used for visualization
-    PALETTE = [0, 255]
+    PALETTE = [[0,0,0], [255,255,255]]
 
     # The formats of image and segmentation map are both .png in this case
     def __init__(self, **kwargs):
