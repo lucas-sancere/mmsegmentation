@@ -5,7 +5,7 @@ data_root = 'data/UQNon-Melanoma/data_tumor/'
 img_norm_cfg = dict( # This img_norm_cfg is widely used because it is mean and std of ImageNet 1K pretrained model
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True)
 
-rop_size = (640, 640)
+crop_size = (640, 640)
 train_pipeline = [
     dict(type='LoadImageFromFile'),
     dict(type='LoadAnnotations', reduce_zero_label=True),
@@ -46,11 +46,11 @@ data = dict(
         type=dataset_type,
         data_root=data_root,
         img_dir='validation/images',
-        ann_dir='validation/annotations'
+        ann_dir='validation/annotations',
         pipeline=test_pipeline),
     test=dict(
         type=dataset_type,
         data_root=data_root,
         img_dir='validation/images',
-        ann_dir='validation/annotations'
+        ann_dir='validation/annotations',
         pipeline=test_pipeline))
