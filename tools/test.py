@@ -1,6 +1,10 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import argparse
 import os
+
+# enable inference with huge images
+os.environ["OPENCV_IO_MAX_IMAGE_PIXELS"] = pow(2,40).__str__()
+
 import os.path as osp
 import shutil
 import time
