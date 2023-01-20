@@ -243,7 +243,7 @@ class EncoderDecoder(BaseSegmentor):
         ori_shape = img_meta[0]['ori_shape']
         assert all(_['ori_shape'] == ori_shape for _ in img_meta)
         if self.test_cfg.mode == 'slide':
-            seg_logit = self.slide_inference(img, img_meta, rescale)
+            seg_logit = self.slide_inference(img, img_meta, rescale) #CHANGED FOR TESTING
         else:
             seg_logit = self.whole_inference(img, img_meta, rescale)
         if self.out_channels == 1:
