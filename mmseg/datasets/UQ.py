@@ -23,10 +23,10 @@ class UQDataset(CustomDataset):
     def __init__(self, **kwargs):
         super(UQDataset, self).__init__(
           # *** In case of training:
-            img_suffix='_image.tif',
+            img_suffix='.tif',
           # *** In case of inference:
             # img_suffix='.tif',
-            seg_map_suffix='_mask.png',
+            seg_map_suffix='.png',
 
             reduce_zero_label=False, # reduce_zero_label is False because label 0 is background (first one in CLASSES above)
             **kwargs)

@@ -1,6 +1,6 @@
 # dataset settings
 dataset_type = 'UQDataset'
-data_root = 'data/UQNon-Melanoma/data_tumor/'
+data_root = 'data/UQNon-Melanoma/data_tumor_10x/'
 inference_root = 'data/UQNon-Melanoma/inference_input/'
 
 
@@ -36,17 +36,17 @@ val_pipeline = [
 ]
 test_pipeline = [
     dict(type='LoadImageFromFile'),
-    # dict(
-    #     type='MultiScaleFlipAug',
-    #     img_scale=(2560, 640),
-    #     flip=False,
-    #     transforms=[
-    #         dict(type='Resize', keep_ratio=True),
-    #         dict(type='RandomFlip'),
-    #         dict(type='Normalize', **img_norm_cfg),
-    #         dict(type='ImageToTensor', keys=['img']),
-    #         dict(type='Collect', keys=['img']),
-    #     ]), 
+    dict(
+        type='MultiScaleFlipAug',
+        img_scale=(2560, 640),
+        flip=False,
+        transforms=[
+            dict(type='Resize', keep_ratio=True),
+            dict(type='RandomFlip'),
+            dict(type='Normalize', **img_norm_cfg),
+            dict(type='ImageToTensor', keys=['img']),
+            dict(type='Collect', keys=['img']),
+        ]), 
 ]
 
 
@@ -68,6 +68,6 @@ data = dict(
     test=dict(
         type=dataset_type,
         data_root=inference_root,
-        img_dir='inference1',
+        img_dir='inferencemini1',
       # ann_dir='validation/annotations',
         pipeline=test_pipeline))

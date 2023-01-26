@@ -1,7 +1,7 @@
 _base_ = [
     '../_base_/models/segmenter_vit-b16_mask.py',
     '../_base_/datasets/UQnon-melanoma.py', '../_base_/default_runtime.py',
-    '../_base_/schedules/schedule_160k.py'
+    '../_base_/schedules/schedule_SCC_160k.py'
 ]
 checkpoint = 'https://download.openmmlab.com/mmsegmentation/v0.5/pretrain/segmenter/vit_large_p16_384_20220308-d4efb41d.pth'  # noqa
 
@@ -17,8 +17,13 @@ model = dict(
         type='SegmenterMaskTransformerHead',
         in_channels=1024,
         channels=1024,
+        num_classes=2,
+        out_channels=2,
         num_heads=16,
-        embed_dims=1024),
+        dropout_ratio=0.0,
+        embed_dims=1024,
+        loss_decode=dict(
+            type='CrossEntropyLoss', use_sigmoid=False, loss_weight=1.0, avg_non_ignore=True)),
     test_cfg=dict(mode='slide', crop_size=(640, 640), stride=(608, 608)))
 
 optimizer = dict(lr=0.001, weight_decay=0.0)
