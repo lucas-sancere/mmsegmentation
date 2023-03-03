@@ -7,6 +7,12 @@ import numpy as np
 from ..builder import PIPELINES
 
 
+
+
+
+
+
+
 @PIPELINES.register_module()
 class LoadImageFromFile(object):
     """Load an image from file.
@@ -33,12 +39,12 @@ class LoadImageFromFile(object):
                  to_float32=False,
                  color_type='color',
                  file_client_args=dict(backend='disk'),
-                 imdecode_backend='tiffile'):
+                 imdecode_backend='tifffile'):
         self.to_float32 = to_float32
         self.color_type = color_type
         self.file_client_args = file_client_args.copy()
         self.file_client = None
-        self.imdecode_backend = 'tiffile'
+        self.imdecode_backend = imdecode_backend
 
     def __call__(self, results):
         """Call functions to load image and get image meta information.
@@ -105,7 +111,7 @@ class LoadAnnotations(object):
     def __init__(self,
                  reduce_zero_label=False,
                  file_client_args=dict(backend='disk'),
-                 imdecode_backend='tiffile'):
+                 imdecode_backend='tifffile'):
         self.reduce_zero_label = reduce_zero_label
         self.file_client_args = file_client_args.copy()
         self.file_client = None
