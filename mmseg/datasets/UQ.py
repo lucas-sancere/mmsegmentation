@@ -25,7 +25,7 @@ class UQDataset(CustomDataset):
           # *** In case of training:
             img_suffix='.tif',
           # *** In case of inference:
-            # img_suffix='.tif',
+            # img_suffix='.ndpi',
             seg_map_suffix='.png',
 
             reduce_zero_label=False, # reduce_zero_label is False because label 0 is background (first one in CLASSES above)
