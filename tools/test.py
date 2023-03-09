@@ -23,6 +23,9 @@ from mmseg.datasets import build_dataloader, build_dataset
 from mmseg.models import build_segmentor
 from mmseg.utils import build_ddp, build_dp, get_device, setup_multi_processes
 
+import PIL
+PIL.Image.MAX_IMAGE_PIXELS = 10000000000000
+
 
 def parse_args():
     parser = argparse.ArgumentParser(

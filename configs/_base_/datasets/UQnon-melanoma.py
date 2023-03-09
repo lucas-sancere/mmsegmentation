@@ -1,6 +1,6 @@
 # dataset settings
 dataset_type = 'UQDataset'
-data_root = 'data/UQNon-Melanoma/data_tumor_10x/'
+data_root = 'data/UQNon-Melanoma/data_tumor/'
 inference_root = 'data/UQNon-Melanoma/inference_input/'
 
 

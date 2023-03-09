@@ -6,10 +6,11 @@ import numpy as np
 
 from ..builder import PIPELINES
 
+import os
+os.environ["OPENCV_IO_MAX_IMAGE_PIXELS"] = pow(2,40).__str__()
 
-
-
-
+import PIL
+PIL.Image.MAX_IMAGE_PIXELS = 10000000000000
 
 
 
@@ -39,7 +40,7 @@ class LoadImageFromFile(object):
                  to_float32=False,
                  color_type='color',
                  file_client_args=dict(backend='disk'),
-                 imdecode_backend='tifffile'):
+                 imdecode_backend='cv2'):
         self.to_float32 = to_float32
         self.color_type = color_type
         self.file_client_args = file_client_args.copy()
@@ -111,7 +112,7 @@ class LoadAnnotations(object):
     def __init__(self,
                  reduce_zero_label=False,
                  file_client_args=dict(backend='disk'),
-                 imdecode_backend='tifffile'):
+                 imdecode_backend='pillow'):
         self.reduce_zero_label = reduce_zero_label
         self.file_client_args = file_client_args.copy()
         self.file_client = None
