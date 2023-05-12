@@ -10,9 +10,9 @@ import numpy as np
 
 PIL.Image.MAX_IMAGE_PIXELS = 10000000000000 # enable training with huge images as dataset
 
-# Register UQ class into DATASETS
+# Register MCskinDataset class into DATASETS
 @DATASETS.register_module()
-class UQDataset(CustomDataset):
+class MCskinDataset(CustomDataset):
     """
     Enter description of the dataset here 
     """
@@ -22,7 +22,7 @@ class UQDataset(CustomDataset):
     PALETTE = [[0,0,0], [255,255,255]]
 
     def __init__(self, **kwargs):
-        super(UQDataset, self).__init__(
+        super(MCskinDataset, self).__init__(
           # *** In case of training:
             img_suffix='.tif',
           # *** In case of inference:

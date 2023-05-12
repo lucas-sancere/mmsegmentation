@@ -1,6 +1,6 @@
 # dataset settings
-dataset_type = 'UQDataset'
-data_root = 'data/UQNon-Melanoma/data_tumor/'
+dataset_type = 'MCskinDataset'
+data_root = 'data/MC-sccskin/training-dataset/'
 inference_root = 'data/SCC-Cohorts-inference-input/'
 
 
