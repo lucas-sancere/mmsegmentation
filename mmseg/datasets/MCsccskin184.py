@@ -10,7 +10,7 @@ import numpy as np
 
 PIL.Image.MAX_IMAGE_PIXELS = 10000000000000 # enable training with huge images as dataset
 
-# Register MCskinDataset class into DATASETS
+# Register MCskinDataset184 class into DATASETS
 @DATASETS.register_module()
 class MCskinDataset184(CustomDataset):
     """
@@ -22,7 +22,7 @@ class MCskinDataset184(CustomDataset):
     PALETTE = [[0,0,0], [255,255,255]]
 
     def __init__(self, **kwargs):
-        super(MCskinDataset, self).__init__(
+        super(MCskinDataset184, self).__init__(
           # *** In case of training:
             img_suffix='.tif',
           # *** In case of inference:

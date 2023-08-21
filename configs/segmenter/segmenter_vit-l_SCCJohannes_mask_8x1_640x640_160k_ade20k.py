@@ -1,6 +1,6 @@
 _base_ = [
     '../_base_/models/segmenter_vit-b16_mask.py',
-    '../_base_/datasets/mc_sccskin.py', '../_base_/default_runtime.py',
+    '../_base_/datasets/mc_sccskin184.py', '../_base_/default_runtime.py',
     '../_base_/schedules/schedule_SCC_segmenter_160k.py'
 ]
 
