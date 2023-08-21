@@ -1,6 +1,6 @@
 # dataset settings
-dataset_type = 'MCskinDataset'
-data_root = 'data/MC-sccskin/training-dataset-refined/'
+dataset_type = 'MCskinDataset53'
+data_root = 'data/MC-sccskin53/training-dataset53-refined/'
 inference_root = 'data/MC-sccskin/inferences/'
 
 
@@ -68,7 +68,7 @@ data = dict(
     test=dict(
         type=dataset_type,
         data_root=inference_root,
-        # data_root=data_root,
-        img_dir='test1/no_progress/Bonn/',
+        #data_root=data_root,
+        img_dir='test1/progress/Bonn',
       # ann_dir='validation/annotations',
         pipeline=test_pipeline))

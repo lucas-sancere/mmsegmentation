@@ -12,7 +12,7 @@ PIL.Image.MAX_IMAGE_PIXELS = 10000000000000 # enable training with huge images a
 
 # Register MCskinDataset class into DATASETS
 @DATASETS.register_module()
-class MCskinDataset(CustomDataset):
+class MCskinDataset53(CustomDataset):
     """
     Enter description of the dataset here 
     """
