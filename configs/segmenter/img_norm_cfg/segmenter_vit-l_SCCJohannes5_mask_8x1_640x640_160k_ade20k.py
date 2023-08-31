@@ -4,9 +4,9 @@ _base_ = [
     '../_base_/schedules/schedule_SCC_segmenter_160k.py'
 ]
 
-checkpoint = 'https://download.openmmlab.com/mmsegmentation/v0.5/pretrain/segmenter/vit_large_p16_384_20220308-d4efb41d.pth'  # noqa
+#checkpoint = 'https://download.openmmlab.com/mmsegmentation/v0.5/pretrain/segmenter/vit_large_p16_384_20220308-d4efb41d.pth'  # noqa
 
-# checkpoint = '/data/lsancere/Ada_Codes/mmsegmentation/checkpoints/segmenter_UQ10xTraining_v2023-01-26.pth'  #We take the resulting checkpoints from
+checkpoint = '/data/lsancere/Ada_Codes/mmsegmentation/checkpoints/segmenter_vit-l_SCCJohannes_mask_8x1_640x640_160k_ade20k_23-05-23.pth'  #We take the resulting checkpoints from
 # the training with non melanoma dataset. Maybe the path is not correct (to test)
 
 model = dict(
@@ -32,8 +32,8 @@ model = dict(
 
 optimizer = dict(lr=0.001, weight_decay=0.0)
 
-img_norm_cfg = dict( # This img_norm_cfg is widely used because it is mean and std of ImageNet 1K pretrained model
-    mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True)
+#We change normalization to fit H&E images! (calculated on the training data)
+img_norm_cfg = dict(mean=[190.3, 170.1, 202.8], std=[37.5, 53.6, 32.4], to_rgb=True)
 
 crop_size = (640, 640)
 train_pipeline = [

@@ -4,9 +4,9 @@ _base_ = [
     '../_base_/schedules/schedule_SCC_segmenter_160k.py'
 ]
 
-checkpoint = 'https://download.openmmlab.com/mmsegmentation/v0.5/pretrain/segmenter/vit_large_p16_384_20220308-d4efb41d.pth'  # noqa
+#checkpoint = 'https://download.openmmlab.com/mmsegmentation/v0.5/pretrain/segmenter/vit_large_p16_384_20220308-d4efb41d.pth'  # noqa
 
-# checkpoint = '/data/lsancere/Ada_Codes/mmsegmentation/checkpoints/segmenter_UQ10xTraining_v2023-01-26.pth'  #We take the resulting checkpoints from
+checkpoint = '/data/lsancere/Ada_Codes/mmsegmentation/checkpoints/segmenter_vit-l_SCCJohannes_mask_8x1_640x640_160k_ade20k_23-05-23.pth'  #We take the resulting checkpoints from
 # the training with non melanoma dataset. Maybe the path is not correct (to test)
 
 model = dict(
@@ -80,7 +80,7 @@ test_pipeline = [
 
 data = dict(
     # num_gpus: 8 -> batch_size: 8
-    samples_per_gpu=1,
+    samples_per_gpu=8,
     train=dict(pipeline=train_pipeline),
     val=dict(pipeline=val_pipeline),
     test=dict(pipeline=test_pipeline))

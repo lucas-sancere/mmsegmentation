@@ -80,7 +80,7 @@ test_pipeline = [
 
 data = dict(
     # num_gpus: 8 -> batch_size: 8
-    samples_per_gpu=1,
+    samples_per_gpu=4,
     train=dict(pipeline=train_pipeline),
     val=dict(pipeline=val_pipeline),
     test=dict(pipeline=test_pipeline))
