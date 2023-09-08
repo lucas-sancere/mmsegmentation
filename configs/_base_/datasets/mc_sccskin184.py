@@ -1,7 +1,7 @@
 # dataset settings
 dataset_type = 'MCskinDataset184'
 data_root = 'data/MC-sccskin184/training-dataset184/'
-inference_root = 'data/MC-sccskin184/inferences/'
+inference_root = 'data/SCC-Cohorts-inference-input/'
 
 
 img_norm_cfg = dict( # This img_norm_cfg is widely used because it is mean and std of ImageNet 1K pretrained model
@@ -69,6 +69,6 @@ data = dict(
         type=dataset_type,
         data_root=inference_root,
         #data_root=data_root,
-        img_dir='validation53refined/',
+        img_dir='downs_fact32/progress/',
       # ann_dir='validation/annotations',
         pipeline=test_pipeline))
