@@ -69,6 +69,6 @@ data = dict(
         type=dataset_type,
         data_root=inference_root,
         #data_root=data_root,
-        img_dir='downs_fact32/no_progress/',
+        img_dir='downs_fact32/no_progress/Regensburg/',
       # ann_dir='validation/annotations',
         pipeline=test_pipeline))
