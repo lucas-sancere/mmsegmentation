@@ -1,3 +1,19 @@
+
+# Fodlers
+.circleci/
+.dev/
+.dist_test/
+.format_cityscapes/
+.github/
+demo/
+docker/
+docs/
+projects/
+test_results/
+visualizations/
+
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
