@@ -1,4 +1,4 @@
-# mmsegmentation as histo-miner submodule
+# mmsegmentation as an histo-miner submodule
 
 Here is the presentation of mmsegmentation library, as a submodule of histo-miner. The original code is coming from: [enter]. This fork contains some variation corresponding to the specific training used for histo-miner pipeline.
 
@@ -6,6 +6,48 @@ This README is a copy of the original readme one can find [enter link].
 
 The original README in Chinese can be found [enter link]
 
+## Installation
+
+One can install the required dependencies inside a conda env as follow:
+
+**Step 1.** Open a terminal in your local or remote device, create a conda environment and activate it. 
+
+```shell
+conda create -n mmsegmentation_submodule python=3.8 -y
+conda activate mmsegmentation_submodule
+```
+
+**Step 2.** Install PyTorch following [official instructions](https://pytorch.org/get-started/locally/), e.g.
+
+- On GPU platforms:
+```shell
+conda install pytorch torchvision -c pytorch
+```
+
+- On CPU platforms:
+```shell
+conda install pytorch torchvision cpuonly -c pytorch
+```
+
+**Step 3.** Install [MMCV](https://github.com/open-mmlab/mmcv) using [MIM](https://github.com/open-mmlab/mim).
+```shell
+pip install -U openmim
+mim install mmcv-full
+```
+
+**Step 4.** Install MMSegmentation.
+```shell
+pip install mmsegmentation
+```
+
+
+For more information on how to install or for a custom installation of the `mmsegmentation submodule`, the reader can refer to the original guidelines [here] that were alos used a the source of this README. 
+
+
+
+--------- Origina README
+
+-----------------------------------------------------------------------------
 
 ## Introduction
 
