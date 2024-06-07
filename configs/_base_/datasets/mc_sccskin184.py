@@ -1,6 +1,6 @@
 # dataset settings
 dataset_type='MCskinDataset184'
-data_root='data/MC-sccskin184/training-dataset184/'
+data_root='/data/lsancere/Data_General/TrainingSets/Segmenter_cancer_annotation/TrainingSet184/training-dataset184/'
 inference_root ='/data/lsancere/Data_General/Collaborators_Dataset/cSCC_CPI_extra1/downsampling/'
 #  cfg-options is not working to change the inference root...
 

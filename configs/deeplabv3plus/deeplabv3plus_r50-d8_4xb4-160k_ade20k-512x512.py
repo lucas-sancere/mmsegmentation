@@ -3,9 +3,9 @@ _base_ = [
     '../_base_/datasets/mc_sccskin184.py', '../_base_/default_runtime.py', 
     '../_base_/schedules/schedule_SCC_segmenter_160k.py'
 ]
-crop_size = (512, 512)
-data_preprocessor = dict(size=crop_size)
+# crop_size = (512, 512)
+# data_preprocessor = dict(size=crop_size)
 model = dict(
-    data_preprocessor=data_preprocessor,
+    # data_preprocessor=data_preprocessor,
     decode_head=dict(num_classes=150),
     auxiliary_head=dict(num_classes=150))

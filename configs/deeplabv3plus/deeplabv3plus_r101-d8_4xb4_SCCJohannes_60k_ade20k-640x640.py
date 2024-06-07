@@ -4,23 +4,26 @@ _base_ = [
     '../_base_/schedules/schedule_SCC_segmenter_160k.py'
 ]
 
-
-crop_size = (640, 640)
-data_preprocessor = dict(size=crop_size)
+checkpoint = 'open-mmlab://resnet101_v1c'
+# crop_size = (640, 640)
+# data_preprocessor = dict(size=crop_size)
 
 # model settings
+# norm_cfg = dict(type='SyncBN', requires_grad=True)
+# data_preprocessor = dict(
+#     type='SegDataPreProcessor',
+#     mean=[123.675, 116.28, 103.53],
+#     std=[58.395, 57.12, 57.375],
+#     bgr_to_rgb=True,
+#     pad_val=0,
+#     seg_pad_val=255,
+#     size=crop_size)
+
 norm_cfg = dict(type='SyncBN', requires_grad=True)
-data_preprocessor = dict(
-    type='SegDataPreProcessor',
-    mean=[123.675, 116.28, 103.53],
-    std=[58.395, 57.12, 57.375],
-    bgr_to_rgb=True,
-    pad_val=0,
-    seg_pad_val=255)
+
 model = dict(
     type='EncoderDecoder',
-    data_preprocessor=data_preprocessor,
-    pretrained='open-mmlab://resnet50_v1c',
+    pretrained=checkpoint,
     backbone=dict(
         type='ResNetV1c',
         depth=101,
