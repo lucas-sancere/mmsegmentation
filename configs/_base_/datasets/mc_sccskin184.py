@@ -1,7 +1,7 @@
 # dataset settings
 dataset_type='MCskinDataset184'
-data_root='/data/lsancere/Data_General/TrainingSets/Segmenter_cancer_annotation/TrainingSet184/training-dataset184/'
-inference_root ='/data/lsancere/Data_General/Collaborators_Dataset/cSCC_CPI_extra1/downsampling/'
+data_root=''
+inference_root='/data/lsancere/Data_General/Collaborators_Dataset/cSCC_CPI_all/cSCC_CPI_extra_folders/cSCC_CPI_extra2/'
 #  cfg-options is not working to change the inference root...
 
 img_norm_cfg = dict( # This img_norm_cfg is widely used because it is mean and std of ImageNet 1K pretrained model
@@ -51,8 +51,8 @@ test_pipeline = [
 
 
 data = dict(
-    samples_per_gpu=4,
-    workers_per_gpu=4,
+    samples_per_gpu=1,
+    workers_per_gpu=8,
     train=dict(
         type=dataset_type,
         data_root=data_root,
@@ -71,3 +71,5 @@ data = dict(
         img_dir=inference_root,
         pipeline=test_pipeline))
 
+
+#/data/lsancere/Data_General/TrainingSets/Segmenter_cancer_annotation/TrainingSet184/training-dataset184/
