@@ -138,3 +138,7 @@ mmseg/.mim
 #Checkpoints
 checkpoints/
 
+#MAC related files
+*.DS_Store
+*._.DS_Store
+
